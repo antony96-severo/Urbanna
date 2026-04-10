@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <a class="navbar-logo" href="{{ url_for('homepage') }}">
+      <img src="{{ url_for('static', filename='fotos_site/urbanna_logo.png') }}" alt="Urbanna Logo">
+    </a>
+  </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+
+  <label for="nav-toggle" class="nav-toggle" aria-label="Abrir menu">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </label>
+
+  <div class="navbar-collapse">
+    <div class="navbar-center">
+      <a href="{{ url_for('homepage') }}">Home</a>
+      <a href="{{ url_for('sobre') }}">Sobre</a>
+      <a href="{{ url_for('masculino') }}">Masculino</a>
+      <a href="{{ url_for('feminino') }}">Feminino</a>
+
+      {% if session.get("admin_logado") %}
+        <a class="admin-nav" href="{{ url_for('admin') }}">Admin</a>
+        <a class="admin-nav" href="{{ url_for('logout') }}">Sair</a>
+      {% endif %}
+    </div>
+
+    <div class="navbar-right">
+      <form class="search-form" action="{{ url_for('buscar') }}" method="GET">
+        <input type="text" name="q" placeholder="Buscar..." autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>

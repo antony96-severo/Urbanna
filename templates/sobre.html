@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %} Sobre {% endblock %}
+
+{% block content %}
+
+<section class="sobre-container">
+
+    <h1 class="sobre-titulo">Sobre a Urbanna</h1>
+
+    <p>
+        A Urbanna nasceu da ideia de que estilo não é apenas vestir roupas,
+        mas expressar identidade. Somos uma marca que acredita na força da
+        autenticidade, na cultura de rua e na liberdade de ser quem você é.
+    </p>
+
+    <p>
+        Defendemos a confiança como postura, a simplicidade como elegância
+        e o conforto como essencial. Cada peça é pensada para acompanhar o
+        ritmo da cidade, o movimento das pessoas e a energia de quem não
+        para.
+    </p>
+
+    <p>
+        A Urbanna não é apenas uma loja. É atitude. É presença.
+        É vestir aquilo que representa sua essência no cotidiano.
+    </p>
+
+    <div class="sobre-imagem">
+        <img src="{{ url_for('static', filename='fotos_site/sobre.png') }}" alt="Imagem institucional Urbana">
+    </div>
+
+    <p>
+        Acreditamos na moda como linguagem. Cada detalhe importa.
+        Cada escolha comunica algo. Nossa missão é oferecer peças que
+        unem qualidade, personalidade e propósito.
+    </p>
+
+     <p>
+        Para facilitar sua experiência, disponibilizamos atendimento direto pelo WhatsApp.
+        Basta clicar em uma das opções abaixo e você será direcionado automaticamente
+        para o WhatsApp da loja, onde poderá tirar dúvidas, consultar tamanhos
+        e finalizar sua compra com rapidez e segurança.
+    </p>
+
+    <p>
+        Seja no masculino ou no feminino, a Urbanna representa quem
+        vive o presente com intensidade e constrói sua própria narrativa.
+    </p>
+
+    <div class="sobre-botoes">
+        <a href="{{ url_for('masculino') }}" class="btn-sobre">Ver Masculino</a>
+        <a href="{{ url_for('feminino') }}" class="btn-sobre">Ver Feminino</a>
+    </div>
+
+</section>
+
+{% endblock %}

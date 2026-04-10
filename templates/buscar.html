@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Resultados da busca - Urbanna
+{% endblock %}
+
+{% block content %}
+
+    <h2>Resultados para: "{{ termo }}"</h2>
+
+    <div class="container-produtos">
+        {% for produto in resultados %}
+            <div class="card-produto">
+                <img
+                    src="{{ url_for('static', filename='fotos_posts/' ~ produto.imagem) }}"
+                    alt="{{ produto.descricao }}"
+                >
+
+                <p>{{ produto.descricao }}</p>
+                <span>R$ {{ produto.preco }}</span>
+
+                {% set mensagem = "Olá, eu vi esse produto " ~ produto.descricao ~ " por R$ " ~ produto.preco ~ " no site da Urbanna. Ainda tem disponível?" %}
+
+                <a
+                    class="btn-whats"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Chamar no WhatsApp
+                </a>
+
+                {% if session.get("admin_logado") %}
+                    <form
+                        action="{{ url_for('deletar', produto_id=produto.id) }}"
+                        method="POST"
+                        onsubmit="return confirm('Tem certeza que deseja excluir este produto?')"
+                    >
+                        <button type="submit" class="btn-excluir">
+                            Excluir
+                        </button>
+                    </form>
+                {% endif %}
+            </div>
+        {% else %}
+            <p>Nenhum produto encontrado.</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

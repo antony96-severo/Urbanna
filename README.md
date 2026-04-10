@@ -11,13 +11,13 @@ O projeto demonstra estrutura backend organizada, autenticação administrativa 
 ## 🖼️ Imagens do Projeto
 
 ### Home
-![Home](UrbannaSite/assets/home.png)
+![Home](assets/home.png)
 
 ### Painel Administrativo
-![Painel](UrbannaSite/assets/admin.png)
+![Painel](assets/admin.png)
 
 ### Sessão Masculina
-![Painel](UrbannaSite/assets/masculino.png)
+![Painel](assets/masculino.png)
 
 ---
 
@@ -65,9 +65,10 @@ Essa funcionalidade transforma a aplicação em uma solução prática para loja
 ## 🧠 Arquitetura
 
 ````
-UrbannaSite/
+/raiz
 │
-├── init.py
+├── main.py
+├── requirements.txt
 ├── models.py
 ├── forms.py
 ├── routes.py

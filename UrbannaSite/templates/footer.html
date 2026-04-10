@@ -1,0 +1,33 @@
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <a href="{{ url_for('homepage') }}" class="footer-logo">
+                <img src="{{ url_for('static', filename='fotos_site/urbanna_logo.png') }}" alt="Urbanna Logo">
+            </a>
+            <p class="footer-slogan">Confiança é o nosso estilo.</p>
+        </div>
+
+        <nav class="footer-links" aria-label="Links do rodapé">
+            <a href="{{ url_for('homepage') }}">Home</a>
+            <a href="{{ url_for('sobre') }}">Sobre</a>
+            <a href="{{ url_for('masculino') }}">Masculino</a>
+            <a href="{{ url_for('feminino') }}">Feminino</a>
+        </nav>
+
+        <div class="footer-contact">
+            <p>Fortaleza - CE</p>
+            <p>
+                Contato via WhatsApp -
+                <a class="footer-whats" href="#" target="_blank" rel="noopener">
+                    (85) 99999-9999
+                </a>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Urbanna. Todos os direitos reservados.</p>
+    </div>
+</footer>
